@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Results</title>
+<link rel="shortcut icon" href="home/logo.png" type="image/x-icon">
+<link rel="icon" href="home/logo.png" type="image/x-icon">
+<script>
+var url = new URL(window.location.href);
+var output = url.searchParams.get("output");
+var confidence = url.searchParams.get("confidence");
+var dateTime = url.searchParams.get("dateTime");
+</script>
+<style>
+html {
+	background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.9)), url('bg.jpg'); 
+	background-repeat: no-repeat; 
+	background-size: cover;
+	height:100%;
+	text-align:center;
+}
+.divs {
+	text-align: center;
+	font-family: Courier New;
+	color: white;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+#web_output {
+	font-size:150px;
+	margin-top:50px;
+	font-weight:bold;
+}
+#web_confidence {
+	font-size:50px;
+	margin-top:50px;
+}
+#web_date {
+	font-size:20px;
+	margin-top:150px;
+}
+</style>
+</head>
+<body class="main">
+<div class="divs" id="web_output">
+<script>document.write(output);</script>
+</div>
+<div class="divs" id="web_confidence">
+Evaluated Depression Score: <script>document.write(confidence);</script>%
+</div>
+<div class="divs" id="web_date">
+As of last scan @ <b><script>document.write(dateTime);</script></b>
+</div>
+</body>
+</html>
